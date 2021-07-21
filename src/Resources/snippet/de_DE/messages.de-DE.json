@@ -1,0 +1,49 @@
+{
+  "sisow": {
+    "gender": "Sex",
+    "genders": {
+      "empty": "Treffen Sie Ihre Wahl...",
+      "male": "Mann",
+      "female": "Frau"
+    },
+    "days": {
+      "empty": "Tag"
+    },
+    "months": {
+      "empty": "Monat",
+      "january": "Januar",
+      "february": "Februar",
+      "march": "März",
+      "april": "April",
+      "may": "Mai",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "August",
+      "september": "September",
+      "october": "Oktober",
+      "november": "November",
+      "december": "Dezember"
+    },
+    "years": {
+      "empty": "Jahr"
+    },
+    "ideal": {
+      "bank": "Bank",
+      "selectBankIssuer": "Bank auswählen"
+    },
+    "additional-info": "Die folgenden zusätzlichen Informationen sind erforderlich, um die Bestellung abzuschließen.",
+    "birthdate": "Geburtsdatum",
+    "coc": "Nummer der Handelskammer",
+    "giropay_bic": "Ihre Bank",
+    "giropay_info": "Mit giropay zahlen Sie einfach, schnell und sicher im Online-Banking Ihrer teilnehmenden Bank oder Sparkasse. Sie werden direkt zum Online-Banking Ihrer Bank weitergeleitet, wo Sie die Überweisung durch Eingabe von PIN und TAN freigeben.",
+    "eps_bic": "Ihre Bank",
+    "eps_info": "Mit eps Online-Überweisung zahlen Sie einfach, schnell und sicher im Online-Banking Ihrer Bank. Im nächsten Schritt werden Sie direkt zum Online-Banking Ihrer Bank weitergeleitet, wo Sie die Zahlung durch Eingabe von PIN und TAN freigeben.",
+    "errorMessages": {
+      "genericError": "Es ist ein Fehler aufgetreten. Bitte wählen Sie eine andere Zahlungsweise.",
+      "transactionError": "Fehler beim Starten der Transaktion (%1$s, %2$s)",
+      "klarnaError": "Momentan ist es nicht möglich, über Klarna zu bezahlen. Wählen Sie eine andere Zahlungsoption.",
+      "afterpayDefaultError": "Leider wurde Ihre Bewerbung zu diesem Zeitpunkt von AfterPay nicht angenommen. Bei Fragen wenden Sie sich bitte an AfterPay oder besuchen Sie die Website unter \"Häufig gestellte Fragen\" über den Link http://www.afterpay.nl/page/consument-faq unter der Überschrift \"Datenkontrolle\". Wir empfehlen Ihnen, eine andere Zahlungsmethode zu wählen, um die Zahlung Ihrer Bestellung abzuschließen.",
+      "billinkError": "Momentan ist es nicht möglich, über Billink zu bezahlen. Wählen Sie eine andere Zahlungsoption."
+    }
+  }
+}

@@ -1,0 +1,4 @@
+/SisowPayment/vendor/
+/.idea/
+/SisowPayment/composer.lock
+!/SisowPayment/src/Resources/views/storefront/page/checkout/confirm/index.html.twig

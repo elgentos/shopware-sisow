@@ -1,0 +1,49 @@
+{
+  "sisow": {
+    "gender": "Geslacht",
+    "genders": {
+      "empty": "Maak uw keuze...",
+      "male": "Man",
+      "female": "Vrouw"
+    },
+    "days": {
+      "empty": "Dag"
+    },
+    "months": {
+      "empty": "Maand",
+      "january": "Januari",
+      "february": "Februari",
+      "march": "Maart",
+      "april": "April",
+      "may": "Mei",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "Augustus",
+      "september": "September",
+      "october": "Oktober",
+      "november": "November",
+      "december": "December"
+    },
+    "years": {
+      "empty": "Jaar"
+    },
+    "ideal": {
+      "bank": "Bank",
+      "selectBankIssuer": "Selecteer uw bank"
+    },
+    "additional-info": "De volgende aanvullende informatie is nodig voor het afronden van de bestelling.",
+    "birthdate": "Geboortedatum",
+    "coc": "KVK nummer",
+    "giropay_bic": "Bank",
+    "giropay_info": "Mit giropay zahlen Sie einfach, schnell und sicher im Online-Banking Ihrer teilnehmenden Bank oder Sparkasse. Sie werden direkt zum Online-Banking Ihrer Bank weitergeleitet, wo Sie die Überweisung durch Eingabe von PIN und TAN freigeben.",
+    "eps_bic": "Bank",
+    "eps_info": "Mit eps Online-Überweisung zahlen Sie einfach, schnell und sicher im Online-Banking Ihrer Bank. Im nächsten Schritt werden Sie direkt zum Online-Banking Ihrer Bank weitergeleitet, wo Sie die Zahlung durch Eingabe von PIN und TAN freigeben.",
+    "errorMessages": {
+      "genericError": "Er is een fout opgetreden. Kies een andere betalingsmethode.",
+      "transactionError": "Fout bij het starten van de transactie (%1$s, %2$s)",
+      "klarnaError": "Op dit moment is het niet mogelijk om te betalen via Klarna, kies een andere betaaloptie.",
+      "afterpayDefaultError": "Helaas is uw aanvraag op dit moment niet door AfterPay geaccepteerd. Voor vragen kunt u contact opnemen met AfterPay of op de website kijken bij \"veel gestelde vragen\" via de link http://www.afterpay.nl/page/consument-faq onder het kopje \"Gegevenscontrole\". Wij adviseren u voor een andere betaalmethode te kiezen om alsnog de betaling van uw bestelling af te ronden.",
+      "billinkError": "Op dit moment is het niet mogelijk om te betalen via Billink, kies een andere betaaloptie."
+    }
+  }
+}

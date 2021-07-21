@@ -1,0 +1,49 @@
+{
+  "sisow": {
+    "gender": "Gender",
+    "genders": {
+      "empty": "Make your choice...",
+      "male": "Male",
+      "female": "Female"
+    },
+    "days": {
+      "empty": "Day"
+    },
+    "months": {
+      "empty": "Month",
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "years": {
+      "empty": "Year"
+    },
+    "ideal": {
+      "bank": "Bank",
+      "selectBankIssuer": "Select your bank"
+    },
+    "additional-info": "The following additional information is required to complete the order.",
+    "birthdate": "Date of birth",
+    "coc": "Chamber of Commerce number",
+    "giropay_bic": "Bank",
+    "giropay_info": "Mit giropay zahlen Sie einfach, schnell und sicher im Online-Banking Ihrer teilnehmenden Bank oder Sparkasse. Sie werden direkt zum Online-Banking Ihrer Bank weitergeleitet, wo Sie die Überweisung durch Eingabe von PIN und TAN freigeben.",
+    "eps_bic": "Bank",
+    "eps_info": "Mit eps Online-Überweisung zahlen Sie einfach, schnell und sicher im Online-Banking Ihrer Bank. Im nächsten Schritt werden Sie direkt zum Online-Banking Ihrer Bank weitergeleitet, wo Sie die Zahlung durch Eingabe von PIN und TAN freigeben.",
+    "errorMessages": {
+      "genericError": "An error has occurred. Please choose another payment method.",
+      "transactionError": "Error on starting the transaction (%1$s, %2$s)",
+      "klarnaError": "At the moment it is not possible to pay via Klarna, choose another payment option.",
+      "afterpayDefaultError": "Unfortunately, your application has not been accepted by AfterPay at this time. If you have any questions, please contact AfterPay or check the website under \"frequently asked questions\" via the link http://www.afterpay.nl/page/consument-faq under the heading \"Data control\". We advise you to choose another payment method to complete the payment of your order.",
+      "billinkError": "At the moment it is not possible to pay via Billink, choose another payment option."
+    }
+  }
+}

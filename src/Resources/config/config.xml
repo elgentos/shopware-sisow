@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Sisow</title>
+        <title lang="de-DE">Sisow</title>
+        <title lang="nl-NL">Sisow</title>
+
+        <input-field type="text">
+            <name>merchantid</name>
+            <label>Merchant ID</label>
+            <label lang="de-DE">Merchant ID</label>
+            <label lang="nl-NL">Merchant ID</label>
+            <required>true</required>
+            <helpText>Merchant ID from your Sisow account.</helpText>
+            <helpText lang="de-DE">Händler-ID von Ihrem Sisow-Konto.</helpText>
+            <helpText lang="nl-NL">Merchant ID uit uw Sisow account.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>merchantkey</name>
+            <label>Merchant Key</label>
+            <label lang="de-DE">Merchant Key</label>
+            <label lang="nl-NL">Merchant Key</label>
+            <required>true</required>
+            <helpText>Merchant Key from your Sisow account.</helpText>
+            <helpText lang="de-DE">Händlerschlüssel von Ihrem Sisow-Konto.</helpText>
+            <helpText lang="nl-NL">Merchant Key uit uw Sisow account.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>shopid</name>
+            <label>Shop ID</label>
+            <label lang="de-DE">Shop ID</label>
+            <label lang="nl-NL">Shop ID</label>
+            <helpText>Shop ID from your Sisow account.</helpText>
+            <helpText lang="de-DE">Shop-ID von Ihrem Sisow-Konto.</helpText>
+            <helpText lang="nl-NL">Shop ID uit uw Sisow account.</helpText>
+        </input-field>
+
+        <!-- input-field type="bool">
+            <name>testmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate Sisow test mode.</helpText>
+            <helpText lang="de-DE">Sisow test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer Sisow test modus.</helpText>
+        </input-field -->
+
+    </card>
+
+    <!-- iDEAL, Bancontact, Sofort, PayPal, overboeking en AfterPay -->
+    <card>
+        <title>AfterPay</title>
+
+        <input-field type="bool">
+            <name>afterpayTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>afterpayB2b</name>
+            <label>Offer B2B</label>
+            <label lang="de-DE">Angebot B2B</label>
+            <label lang="nl-NL">B2B aanbieden</label>
+            <helpText>Accept B2B transactions</helpText>
+            <helpText lang="de-DE">Akzeptieren Sie B2B-Transaktionen</helpText>
+            <helpText lang="nl-NL">Accepteer B2B-transacties</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Bancontact</title>
+
+        <input-field type="bool">
+            <name>bancontactTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Belfius</title>
+
+        <input-field type="bool">
+            <name>belfiusTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>belfiusDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Billink</title>
+
+        <input-field type="bool">
+            <name>billinkTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>billinkB2b</name>
+            <label>Offer B2B</label>
+            <label lang="de-DE">Angebot B2B</label>
+            <label lang="nl-NL">B2B aanbieden</label>
+            <helpText>Accept B2B transactions</helpText>
+            <helpText lang="de-DE">Akzeptieren Sie B2B-Transaktionen</helpText>
+            <helpText lang="nl-NL">Accepteer B2B-transacties</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Bunq</title>
+
+        <input-field type="bool">
+            <name>bunqTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>bunqDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Cbc</title>
+
+        <input-field type="bool">
+            <name>cbcTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>cbcDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>EPS</title>
+
+        <input-field type="bool">
+            <name>epsTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>epsDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>GiroPay</title>
+
+        <input-field type="bool">
+            <name>giropayTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>giropayDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>iDEAL</title>
+
+        <input-field type="bool">
+            <name>idealTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>idealDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>iDEAL QR</title>
+
+        <input-field type="bool">
+            <name>idealqrTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>idealqrDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>In3</title>
+
+        <input-field type="bool">
+            <name>capayableTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>capayableB2b</name>
+            <label>Offer B2B</label>
+            <label lang="de-DE">Angebot B2B</label>
+            <label lang="nl-NL">B2B aanbieden</label>
+            <helpText>Accept B2B transactions</helpText>
+            <helpText lang="de-DE">Akzeptieren Sie B2B-Transaktionen</helpText>
+            <helpText lang="nl-NL">Accepteer B2B-transacties</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>ING Home'Pay</title>
+
+        <input-field type="bool">
+            <name>homepayTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>homepayDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Kbc</title>
+
+        <input-field type="bool">
+            <name>kbcTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>kbcDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Klarna</title>
+
+        <input-field type="bool">
+            <name>klarnaTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>klarnaMakeinvoice</name>
+            <label>Create invoice</label>
+            <label lang="de-DE">Rechnung erstellen</label>
+            <label lang="nl-NL">Maak factuur</label>
+            <helpText>Create invoice on reservation</helpText>
+            <helpText lang="de-DE">Erstellen Sie eine Rechnung bei der Reservierung</helpText>
+            <helpText lang="nl-NL">Maak een factuur bij reservering</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Maestro</title>
+
+        <input-field type="bool">
+            <name>maestroTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Mastercard</title>
+
+        <input-field type="bool">
+            <name>mastercardTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Overboeking</title>
+
+        <input-field type="bool">
+            <name>overboekingTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>overboekingDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>overboekingInclude</name>
+            <label>Include iDEAL link</label>
+            <label lang="de-DE">Include iDEAL link</label>
+            <label lang="nl-NL">Include iDEAL link</label>
+        </input-field>
+
+        <input-field type="int">
+            <name>overboekingDays</name>
+            <label>Days valid</label>
+            <label lang="de-DE">Days valid</label>
+            <label lang="nl-NL">Days valid</label>
+            <helpText>Number of days an banktransfer can be made before it Cancelled</helpText>
+            <helpText lang="nl-NL">Number of days an banktransfer can be made before it Cancelled</helpText>
+        </input-field>
+
+    </card>
+
+    <card>
+        <title>PayPal</title>
+
+        <input-field type="bool">
+            <name>paypalecTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>paypalecDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+
+    <card>
+        <title>Sofort</title>
+
+        <input-field type="bool">
+            <name>sofortTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+
+        <input-field type="text">
+            <name>sofortDescription</name>
+            <label>Description on the bank account</label>
+            <label lang="de-DE">Description on the bank account</label>
+            <label lang="nl-NL">Description on the bank account</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Spraypay</title>
+
+        <input-field type="bool">
+            <name>spraypayTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Visa</title>
+
+        <input-field type="bool">
+            <name>visaTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>V PAY</title>
+
+        <input-field type="bool">
+            <name>vpayTestmode</name>
+            <label>Testmode active</label>
+            <label lang="de-DE">Testmodus aktiv</label>
+            <label lang="nl-NL">Testmode aktief</label>
+            <helpText>Activate test mode.</helpText>
+            <helpText lang="de-DE">Test mode aktivieren.</helpText>
+            <helpText lang="nl-NL">Activeer test modus.</helpText>
+        </input-field>
+    </card>
+
+</config>

@@ -1,0 +1,49 @@
+{
+    "name": "sisow/payment",
+    "description": "Accepting payments with Sisow",
+    "version": "v1.0.2",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sisow",
+            "email": "support@sisow.nl",
+            "homepage": "https://sisow.nl"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.2",
+        "shopware/storefront": "~6.2",
+        "shopware/administration": "~6.2"
+    },
+    "extra": {
+        "shopware-plugin-class": "Sisow\\Payment\\SisowPayment",
+		"copyright": "(c) by Sisow",
+        "plugin-icon": "src/Resources/config/sisow.png",
+        "label": {
+            "de-DE": "Sisow Payment Plugin für Shopware 6",
+            "en-GB": "Sisow Payment Plugin for Shopware 6",
+            "nl-NL": "Sisow Payment Plugin voor Shopware 6"
+        },
+        "description": {
+            "de-DE": "Dieses Plug-In installiert alle Sisow-Zahlungsmethoden für Ihre Shopware-Installation.\n\nWeitere Informationen zu den Zahlungsmethoden finden Sie auf unserer Website https://www.sisow.nl/betaalmethoden/.",
+            "en-GB": "This plug-in will install all the Sisow payment methods to your Shopware installation.\n\nFor more information about the payment methods visit our website https://www.sisow.nl/betaalmethoden/",
+            "nl-NL": "Deze plug-in installeert alle betaalmethoden van Sisow op uw Shopware-installatie.\n\nVoor meer informatie over de betaalmethoden bezoek onze website https://www.sisow.nl/betaalmethoden/"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://www.sisow.nl/developers/plug-in-implementatie/",
+            "en-GB": "https://www.sisow.nl/developers/plug-in-implementatie/",
+            "nl-NL": "https://www.sisow.nl/developers/plug-in-implementatie/"
+        },
+        "supportLink": {
+            "de-DE": "https://www.sisow.nl/support/",
+            "en-GB": "https://www.sisow.nl/support/",
+            "nl-NL": "https://www.sisow.nl/support/"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sisow\\Payment\\": "src/"
+        }
+    }
+}

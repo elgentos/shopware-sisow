@@ -1,0 +1,86 @@
+<div class="sisow-payment klarna">
+    <form id="sisow_klarna">
+        <div class="form-group row m-0">
+            <label for="sisow_gender" class="label col-form-label-lg">
+                <span>{{ "sisow.gender"|trans }}</span>
+            </label>
+            <select form="confirmOrderForm"
+                    class="form-control custom-select col-4 ml-2" type="text"
+                    id="sisow_gender"
+                    name="sisow_gender"
+                    required>
+                <option value="">{{ "sisow.genders.empty"|trans }}</option>
+                <option value="m">{{ "sisow.genders.male"|trans }}</option>
+                <option value="f">{{ "sisow.genders.female"|trans }}</option>
+            </select>
+        </div>
+
+        <div class="form-group row m-0">
+            <label for="geboortedatum" class="label col-form-label-lg ">
+                <span>{{ "sisow.birthdate"|trans }}</span>
+            </label>
+            <div class="input-group col-4" id="geboortedatum">
+                            <select form="confirmOrderForm" id="sisow_day" name="sisow_day" class="form-control custom-select day" required>
+                                <option value="">{{ "sisow.days.empty"|trans }}</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+
+                            <select form="confirmOrderForm" id="sisow_month" name="sisow_month" class="form-control custom-select month" required>
+                                <option value="">{{ "sisow.months.empty"|trans }}</option>
+                                <option value="01">{{ "sisow.months.january"|trans }}</option>
+                                <option value="02">{{ "sisow.months.february"|trans }}</option>
+                                <option value="03">{{ "sisow.months.march"|trans }}</option>
+                                <option value="04">{{ "sisow.months.april"|trans }}</option>
+                                <option value="05">{{ "sisow.months.may"|trans }}</option>
+                                <option value="06">{{ "sisow.months.june"|trans }}</option>
+                                <option value="07">{{ "sisow.months.july"|trans }}</option>
+                                <option value="08">{{ "sisow.months.august"|trans }}</option>
+                                <option value="09">{{ "sisow.months.september"|trans }}</option>
+                                <option value="10">{{ "sisow.months.october"|trans }}</option>
+                                <option value="11">{{ "sisow.months.november"|trans }}</option>
+                                <option value="12">{{ "sisow.months.december"|trans }}</option>
+                            </select>
+
+                            {% if page.extensions.sisow.years|length > 0 %}
+                                <select form="confirmOrderForm" id="sisow_year" name="sisow_year" class="form-control custom-select year" required>
+                                    <option value="">{{ "sisow.years.empty"|trans }}</option>
+                                    {% for year in page.extensions.sisow.years %}
+                                        <option value="{{ year.value }}">{{ year.year }}</option>
+                                    {% endfor %}
+                                </select>
+                            {% endif %}
+            </div>
+        </div>
+
+    </form>
+</div>

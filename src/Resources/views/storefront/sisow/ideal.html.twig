@@ -1,0 +1,15 @@
+<div class="sisow-payment ideal">
+    {% if page.extensions.sisow.issuers|length > 0 %}
+    <form id="sisow_ideal">
+        <div class="form-group row m-0">
+            <label for="sisow_issuer" class="col-form-label-lg">{{ "sisow.ideal.bank"|trans }}</label>
+            <select form="confirmOrderForm" name="sisow_issuer" id="sisow_issuer" class="form-control custom-select col-4 ml-2" required>
+                <option value="">{{ "sisow.ideal.selectBankIssuer"|trans }}</option>
+                {% for issuer in page.extensions.sisow.issuers %}
+                    <option {% if page.sisow.selected_issuer == issuer.bankid %} selected="selected" {% endif %} value="{{ issuer.bankid }}">{{ issuer.bankname }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+    {% endif %}
+</div>

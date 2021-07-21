@@ -1,0 +1,313 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Sisow\Payment\Components\SisowPayment\SisowService" />
+
+        <service id="Sisow\Payment\Helpers\RedirectHelper">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="router.default"/>
+        </service>
+
+        <!--service id="Sisow\SisowClient" class="Sisow\SisowClient">
+            <factory service="Sisow\Payment\Helpers\SisowHelper" method="createSisowClient" />
+        </service-->
+
+        <service id="Sisow\Payment\Helpers\SisowHelper">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="Sisow\Payment\Components\SisowPayment\SisowService"/>
+            <argument type="service" id="Symfony\Component\Routing\Generator\UrlGeneratorInterface"/>
+            <argument type="service" id="payment_method.repository" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\AsyncSisowHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\SyncSisowHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.sync" />
+        </service>
+
+
+        <!-- Payment methods -->
+
+        <!-- sync -->
+
+        <service id="Sisow\Payment\PaymentHandlers\AfterPayHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.sync" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\BillinkHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.sync" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\OverboekingHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.sync" />
+        </service>
+
+        <!-- async -->
+
+        <service id="Sisow\Payment\PaymentHandlers\BancontactHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\BelfiusHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\BunqHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\CapayableHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\CbcHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\EpsHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\GiropayHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\HomepayHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\IdealHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\IdealQrHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\KbcHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\KlarnaHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\MaestroHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\MastercardHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\PayPalHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\SofortHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\SpraypayHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\VisaHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <service id="Sisow\Payment\PaymentHandlers\VpayHandler">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginService"/>
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+            <argument type="service" id="order.repository" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="SisowPayment\Util\Logger" />
+            <tag name="shopware.payment.method.async" />
+        </service>
+
+        <!-- Controller -->
+        <service id="Sisow\Payment\Storefront\Controller\NotifyController" public="true">
+            <argument type="service" id="order.repository"/>
+            <argument type="service" id="Sisow\Payment\Helpers\SisowHelper"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="Sisow\Payment\Storefront\Controller\RedirectController" public="true">
+            <argument type="service" id="Sisow\Payment\Helpers\RedirectHelper" />
+        </service>
+        <!-- /Controller -->
+
+        <service id="SisowPayment\Util\Logger" class="Monolog\Logger">
+            <factory service="Shopware\Core\Framework\Log\LoggerFactory" method="createRotating"/>
+
+            <argument type="string">sisow_payment</argument>
+        </service>
+    </services>
+</container>

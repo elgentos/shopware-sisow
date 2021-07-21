@@ -1,0 +1,15 @@
+<div class="sisow-payment giropay">
+    <script src="https://bankauswahl.giropay.de/widget/v2/girocheckoutwidget.js"></script>
+    <link rel="stylesheet" href="https://bankauswahl.giropay.de/widget/v2/style.css" />
+
+    <form id="sisow_giropay">
+        <div class="form-group row m-0">
+            <p>{{ "sisow.giropay_info"|trans }}</p>
+            <label for="sisow_bic" class="label col-form-label-lg">
+                {{ "sisow.giropay_bic"|trans }}
+            </label>
+            <input form="confirmOrderForm" type="text" id="sisow_bic" name="sisow_bic" class="form-control col-4 ml-2" autocomplete="off"
+                   onkeyup="girocheckout_widget(this, event, 'bic', '0')"  required>
+        </div>
+    </form>
+</div>

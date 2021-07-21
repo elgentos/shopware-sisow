@@ -1,0 +1,14 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{% block page_checkout_aside_actions %}
+    {% if page.extensions.sisow and page.extensions.sisow.template %}
+        <div class="card-title">
+            {{ page.paymentMethodName }}
+        </div>
+        <div class="card">
+            {% sw_include page.extensions.sisow.template %}
+        </div>
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}
