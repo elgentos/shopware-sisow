@@ -285,7 +285,6 @@ class BaseSisowHandler {
         $this->sisow->entranceCode = $order->getOrderNumber();
         $this->sisow->description = $description; // description for consumer bank statement
 
-        $returnUrl = "invalid.local";
         if (empty($returnUrl)) {
             $returnUrl = $this->sisowHelper->getNotifyUrl();
         }
